@@ -119,12 +119,18 @@ public interface HasParts extends Document {
 }
 ```
 
-Now we are ready to introduce the `Car`.
+Now we are ready to introduce the `Car` and `Part`.
 
 ```java
 public class Car extends AbstractDocument implements HasModel, HasPrice, HasParts {
 
   public Car(Map<String, Object> properties) {
+    super(properties);
+  }
+}
+public class Part extends AbstractDocument implements HasModel, HasPrice {
+
+  public Part(Map<String, Object> properties) {
     super(properties);
   }
 }
